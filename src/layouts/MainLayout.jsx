@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 
 const MainLayout = () => {
   return (
-    <div style={{ display: "flex", minHeight: "100vh" }}>
+    <div style={{ display: "flex" }} className="h-screen">
       <Sidebar />
 
       <main style={{ flex: 1, padding: "20px" }}>
