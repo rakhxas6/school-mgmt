@@ -14,7 +14,7 @@ export const fetchStudents = createAsyncThunk(
       if (error) throw error;
       return data || [];
     } catch (error) {
-      return rejectWithValue(error?.message || "Failed to fetch classes");
+      return rejectWithValue(error?.message || "Failed to fetch students");
     }
   }
 );

@@ -7,6 +7,9 @@ import Classes from "../pages/Classes";
 import MainLayout from "../layouts/MainLayout";
 import Teachers from "../pages/Teachers";
 import Homepage from "../components/Homepage";
+import Notices from "../pages/Notices";
+import Complains from "../pages/Complains";
+import { Toaster } from "react-hot-toast";
 
 const AppRoutes = () => {
   return (
@@ -23,6 +26,8 @@ const AppRoutes = () => {
           <Route path="/students" element={<Students />} />
           <Route path="/teachers" element={<Teachers />} />
           <Route path="/classes" element={<Classes />} />
+          <Route path="/notices" element={<Notices />} />
+          <Route path="/complains" element={<Complains />} />
         </Route>
 
         {/* Default */}

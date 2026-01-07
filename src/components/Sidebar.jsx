@@ -2,6 +2,11 @@ import { Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../redux/slices/AuthSlicer";
 import { useNavigate } from "react-router-dom";
+import { SiGoogleclassroom } from "react-icons/si";
+import { IoMdNotificationsOutline } from "react-icons/io";
+import { FaRegCircleQuestion } from "react-icons/fa6";
+
+
 
 const Sidebar = () => {
   const location = useLocation();
@@ -50,15 +55,27 @@ const Sidebar = () => {
       path: "/classes",
       label: "Classes",
       icon: (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-        </svg>
+       <SiGoogleclassroom className="w-5 h-5"/>
+      ),
+    },
+    {
+      path: "/notices",
+      label: "Notices",
+      icon: (
+        <IoMdNotificationsOutline className="w-5 h-5"/>
+      ),
+    },
+    {
+      path: "/complains",
+      label: "Complains",
+      icon: (
+        <FaRegCircleQuestion className="w-5 h-5"/>
       ),
     },
   ];
 
   return (
-    <div className="w-64 bg-gray-900 text-white min-h-screen flex flex-col ">
+    <div className="w-80 bg-gray-900 text-white min-h-screen flex flex-col ">
       {/* Header */}
       <div className="p-6 border-b border-gray-700">
         <h3 className="text-xl font-bold text-white">School MS</h3>
@@ -66,14 +83,14 @@ const Sidebar = () => {
       </div>
 
       {/* User Info */}
-      {/* {user && (
+      {user && (
         <div className="px-4 py-3 bg-gray-800 border-b border-gray-700">
           <p className="text-sm font-medium text-white truncate">{user.email}</p>
           <span className="inline-block mt-1 px-2 py-1 bg-blue-500 text-white rounded text-xs font-medium">
             {role}
           </span>
         </div>
-      )} */}
+      )}
 
       {/* Navigation */}
       <nav className="flex-1 py-4">

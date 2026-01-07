@@ -11,6 +11,9 @@ export const login = createAsyncThunk(
       if (email === "admin" && password === "admin") {
         return { user: { email: "admin" }, session: null, role: "admin" };
       }
+      if (email === "teacher") {
+        return { user: { email: "teacher" }, session: null, role: "teacher" };
+      }
 
       // ===== Guest Login (optional if needed) =====
       if (email === "guest") {
@@ -119,7 +122,7 @@ const authSlice = createSlice({
         state.loading = false;
         state.user = action.payload.user;
         state.session = action.payload.session;
-        state.role = action.payload.role;       // ✅ Set role
+        state.role = action.payload.role;       
         state.isAuthenticated = action.payload.role !== "guest"; // Guest can see data without auth
       })
       .addCase(login.rejected, (state, action) => {
